@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+def appVersion = rootProject.ext.appVersion
+
+android {
+    compileSdkVersion appVersion.compileSdkVersion
+    buildToolsVersion appVersion.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion appVersion.minSdkVersion
+        targetSdkVersion appVersion.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    api 'androidx.appcompat:appcompat:1.2.0'
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+    api 'com.google.android.material:material:1.2.1'
+    api 'androidx.constraintlayout:constraintlayout:2.0.1'
+
+    api 'io.reactivex.rxjava2:rxjava:2.2.14'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'com.uber.autodispose:autodispose:1.4.0'
+    api 'com.uber.autodispose:autodispose-android-archcomponents:1.4.0'
+
+    api 'com.alibaba:fastjson:1.2.70'
+    api 'org.greenrobot:eventbus:3.2.0'
+    api 'com.wuhenzhizao:titlebar:1.2.0'
+    api 'com.tencent:mmkv-static:1.2.2'
+    api 'com.jaeger.statusbarutil:library:1.5.1'
+
+    api 'com.lxj:xpopup:2.0.11'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    api 'com.tencent.tbs.tbssdk:sdk:43939'
+
+    api 'com.hjq:xxpermissions:9.2'
+
+
+    implementation rootProject.ext.dependencies.core_ktx
+    annotationProcessor rootProject.ext.arouter.arouter_compiler
+    implementation rootProject.ext.arouter.arouter
+
+}
+repositories {
+    mavenCentral()
+}

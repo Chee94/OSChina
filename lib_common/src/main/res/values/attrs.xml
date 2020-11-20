@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RoundView">
+        <attr name="Color" format="color|reference" />
+        <attr name="Round" format="dimension" />
+        <attr name="AspectRatio" format="float" />
+        <attr name="RoundLeftTop" format="dimension" />
+        <attr name="RoundRightTop" format="dimension" />
+        <attr name="RoundLeftBottom" format="dimension" />
+        <attr name="RoundRightBottom" format="dimension" />
+        <attr name="StyleType">
+            <enum name="FILL" value="0" />
+            <enum name="STROKE" value="1" />
+        </attr>
+        <attr name="StrokeWidth" format="dimension" />
+        <attr name="StrokeColor" format="color|reference" />
+    </declare-styleable>
+
+
+</resources>

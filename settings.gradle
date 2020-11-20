@@ -1,0 +1,7 @@
+include ':lib_login'
+include ':lib_core'
+include ':lib_res'
+include ':lib_network'
+include ':lib_common'
+include ':app'
+rootProject.name = "OSChina"
