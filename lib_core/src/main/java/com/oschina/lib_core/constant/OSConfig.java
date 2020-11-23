@@ -11,8 +11,7 @@ public class OSConfig {
     public static final String CLIENT_ID = "YIVZeCbwVhxmdMeKjdLb";
     //开源中国 密钥
     public static final String CLIENT_SECRET = "mPAumrB3Yyrjfk6ku8GqAzoYVootAXqI";
-
     //回调地址
-    public static final String CALLBACK_URL = "https://www.baidu.com/";
+    public static final String CALLBACK_URL = "https://www.baidu.com";
 
 }
