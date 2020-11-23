@@ -9,5 +9,9 @@ import android.app.Application;
  */
 public class CoreApp extends Application {
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
 
 }

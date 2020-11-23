@@ -38,7 +38,7 @@ public class RxLifeCycleUtils {
     /**
      * 绑定View
      */
-    public static <T> AutoDisposeConverter<T> bindView(View view) {
+    public static AutoDisposeConverter bindView(View view) {
         return AutoDispose.autoDisposable(ViewScopeProvider.from(view));
     }
 

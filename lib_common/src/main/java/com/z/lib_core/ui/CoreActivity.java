@@ -2,6 +2,7 @@ package com.z.lib_core.ui;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -97,6 +98,14 @@ public abstract class CoreActivity extends AppCompatActivity {
                         callback.onResult(aLong);
                     }
                 });
+    }
+
+    public void toastShort(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    public void toastLong(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 
 }

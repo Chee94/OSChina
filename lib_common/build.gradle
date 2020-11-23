@@ -38,6 +38,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     api 'androidx.appcompat:appcompat:1.2.0'
     api 'androidx.recyclerview:recyclerview:1.1.0'
@@ -46,8 +47,6 @@ dependencies {
 
     api 'io.reactivex.rxjava2:rxjava:2.2.14'
     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    api 'com.uber.autodispose:autodispose:1.4.0'
-    api 'com.uber.autodispose:autodispose-android-archcomponents:1.4.0'
 
     api 'com.alibaba:fastjson:1.2.70'
     api 'org.greenrobot:eventbus:3.2.0'
@@ -57,7 +56,6 @@ dependencies {
 
     api 'com.lxj:xpopup:2.0.11'
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
     api 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -66,6 +64,13 @@ dependencies {
 
     api 'com.hjq:xxpermissions:9.2'
 
+    //日志输出库
+    api 'com.orhanobut:logger:2.2.0'
+
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+    api 'com.uber.autodispose:autodispose:1.4.0'
+    api 'com.uber.autodispose:autodispose-android-archcomponents:1.4.0'
 
     implementation rootProject.ext.dependencies.core_ktx
     annotationProcessor rootProject.ext.arouter.arouter_compiler

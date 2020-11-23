@@ -1,9 +1,16 @@
-package com.oschina.lib_core.base;
+package com.z.oschina;
 
 import android.util.Log;
 
+import androidx.annotation.Nullable;
+
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.oschina.lib_network.OSNetwork;
+import com.tencent.mmkv.MMKV;
 import com.tencent.smtt.sdk.QbSdk;
 import com.z.lib_core.app.CoreApp;
+
+import static com.orhanobut.logger.Logger.addLogAdapter;
 
 /**
  * Creator:  chee
@@ -16,6 +23,14 @@ public class OSApp extends CoreApp {
     public void onCreate() {
         super.onCreate();
         initWebView();
+        OSNetwork.init();
+        MMKV.initialize(this);
+        addLogAdapter(new AndroidLogAdapter() {
+            @Override
+            public boolean isLoggable(int priority, @Nullable String tag) {
+                return BuildConfig.DEBUG;
+            }
+        });
     }
 
     private void initWebView() {
